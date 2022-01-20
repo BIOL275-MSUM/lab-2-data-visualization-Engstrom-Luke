@@ -1,32 +1,27 @@
 library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✔ ggplot2 3.3.2     ✔ purrr   0.3.4
-#> ✔ tibble  3.0.3     ✔ dplyr   1.0.2
-#> ✔ tidyr   1.1.2     ✔ stringr 1.4.0
-#> ✔ readr   1.4.0     ✔ forcats 0.5.0
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> 
-#> view(penguins)
 
 library(palmerpenguins)
 
 penguins
 
 view(penguins)
+# Showed penguin data
 
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm))
+# Made a scatter plot with no color
 
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species, shape = island))
+# Made a scatter plot with colors blue, green and red. Along with shapes circles, squares, and triangles
 
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species, shape = island))+
   facet_wrap(~ species, nrow = 1)
+# Made three columns with the titles Adelie, Chinstrap, and Gentoo
 
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species, shape = island))+
   facet_grid(island ~ species)
+# Added 3 rows titled Biscoe, Dream, and Torgersen on top of the 3 collumns from the previous code
 
